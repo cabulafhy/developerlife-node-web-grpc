@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package lista;
+
+// The greeting service definition.
+service Lista {
+  rpc cadastro (CadastroResquest) returns (CadastroReply) {}
+  rpc listar (ConsultaRequest) returns (ConsultaReply) {}
+}
+
+message CadastroResquest {
+    string tipo = 1;
+    string descricao = 2;
+}
+
+message CadastroReply {
+    string message = 1;
+}
+
+// The request message containing the user's name.
+message ConsultaRequest {
+  int32 id = 1;
+}
+
+// The response message containing the greetings
+message ConsultaReply {
+  string message = 1;
+}
